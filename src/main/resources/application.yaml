@@ -1,0 +1,15 @@
+quarkus:
+  datasource:
+    db-kind: mysql
+    jdbc:
+      url: jdbc:mysql://localhost:31202/gaoryu?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: gaoryu
+    password: gaoryu
+  log:
+    level: INFO
+  hibernate-orm:
+    physical-naming-strategy: jp.co.loggers.lambda.CamelCaseToSnakeCaseNamingStrategy
+    log:
+      sql: true
+      format-sql: true
+      bind-parameters: true
