@@ -1,6 +1,6 @@
 package jp.co.loggers.lambda.entity;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -26,8 +26,36 @@ public class Restaurant extends AbstractEntity {
 
 	private String name;
 
+	private String zipcode;
+
+	private String prefecturesCode;
+
+	private String address1;
+
+	private String address2;
+
+	private String address3;
+
+	private String latitude;
+
+	private String longitude;
+
+	private String tel;
+
+	private String businessHours;
+
+	private String regularHoliday;
+
+	private String averageAmountSpent;
+
+	private String acceptedCreditCards;
+
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "restaurantId")
-	private List<Menu> menus;
+	private Set<Menu> menus;
+
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "restaurantId")
+	private Set<Coupon> coupons;
 
 }

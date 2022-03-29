@@ -1,5 +1,7 @@
 package jp.co.loggers.lambda.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 
 import jp.co.loggers.lambda.common.AbstractEntity;
@@ -16,16 +18,16 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Menu extends AbstractEntity {
+public class Coupon extends AbstractEntity {
 
 	private String name;
 
 	private Long restaurantId;
 
-	private Integer type;
+	private String presentationConditions;
 
-	private Long price;
+	private String conditionsOfUse;
 
-	private String description;
+	private Date expiresOn;
 
 }
