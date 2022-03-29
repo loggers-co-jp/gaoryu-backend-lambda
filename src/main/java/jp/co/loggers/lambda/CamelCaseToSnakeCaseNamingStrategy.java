@@ -19,4 +19,9 @@ public class CamelCaseToSnakeCaseNamingStrategy extends PhysicalNamingStrategySt
 		return Identifier.toIdentifier(CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, identifier.getText()));
 	}
 
+	@Override
+	public Identifier toPhysicalTableName(Identifier identifier, JdbcEnvironment context) {
+		return Identifier.toIdentifier(CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, identifier.getText()));
+	}
+
 }
